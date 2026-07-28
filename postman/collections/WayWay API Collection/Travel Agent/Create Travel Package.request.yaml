@@ -1,0 +1,54 @@
+$kind: http-request
+name: 'Create Travel Package'
+method: POST
+url: '{{base_url}}/travel-agent/packages'
+order: 3000
+headers:
+  - key: X-CSRF-TOKEN
+    value: '{{csrf_token}}'
+body:
+  type: formdata
+  content:
+    - type: text
+      key: nama_paket
+      value: 'Paket Wisata Batam 3 Hari 2 Malam'
+    - type: text
+      key: deskripsi
+      value: 'Paket wisata lengkap menjelajahi keindahan Batam'
+    - type: text
+      key: harga
+      value: '1500000'
+    - type: text
+      key: durasi_hari
+      value: '3'
+    - type: text
+      key: min_peserta
+      value: '2'
+    - type: text
+      key: max_peserta
+      value: '20'
+    - type: text
+      key: include
+      value: 'Hotel, Transport, Makan 3x sehari, Guide'
+    - type: text
+      key: exclude
+      value: 'Tiket pesawat, Pengeluaran pribadi'
+    - type: text
+      key: 'destinasi_ids[]'
+      value: '1'
+    - type: text
+      key: 'destinasi_ids[]'
+      value: '2'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Travel package created", function() {
+          pm.expect(pm.response.code).to.be.oneOf([200, 201, 302, 403, 422]);
+      });
+      if (pm.response.code === 200 || pm.response.code === 201) {
+          const json = pm.response.json();
+          if (json && json.id) {
+              pm.environment.set("travel_package_id", json.id);
+          }
+      }

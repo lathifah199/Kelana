@@ -1,0 +1,198 @@
+<section id="beranda"
+    class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline
+        class="absolute inset-0 w-full h-full object-cover">
+        <source src="{{ asset('videos/batam-hero.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- OVERLAY GRADIENT -->
+    <div class="absolute inset-0 
+        bg-gradient-to-b 
+        from-black/20 via-black/10 to-transparent">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative z-20 text-center px-4 sm:px-6 max-w-2xl text-white">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+            Find Your Way<br>Enjoy the Way
+        </h1>
+
+        <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white/90">
+            AI Travel Guide for Batam
+        </p>
+
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+
+    {{-- Explore Now --}}
+<a href="#destinasi"
+    class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg
+           bg-[#F4DBB4] text-[#1e293b] hover:bg-[#f9d497] transition">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
+    Explore Now
+</a>
+
+<a href="{{ route('mitra.form') }}"
+    class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg
+           bg-[#5B9AC7] text-white hover:bg-[#496d9e] transition">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
+    Partner with Us
+</a>
+</div>
+    </div>
+
+    <!-- FADE TO NEXT SECTION -->
+    <div class="absolute bottom-0 left-0 w-full h-32
+                bg-gradient-to-t from-white to-transparent z-10">
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
+        
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            
+            <!-- LEFT: Text Content -->
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-[#496d9e] mb-6 leading-tight">
+                    Discover Your Dream Destination
+                </h2>
+                
+                <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+                    WayWay is here to help you find the best travel experiences in Batam. 
+                    From exotic beaches to mouthwatering local cuisine, every journey 
+                    will bring new unforgettable stories. Let's explore the beauty of Batam together.
+                </p>
+                
+                <a href="{{ route('destinasi.index') }}" 
+                   class="inline-block bg-[#F4DBB4] hover:bg-[#f9d497] 
+                          text-black font-semibold px-8 py-3 rounded-full 
+                          transition shadow-md hover:shadow-lg">
+                    Explore Now
+                </a>
+            </div>
+            
+            <!-- Image -->
+            <div class="order-1 lg:order-2">
+                <div class="relative">
+                    <!-- Main Image -->
+                    <img src="{{ asset('images/sunset.jpeg') }}" 
+                         alt="Batam Tourism"
+                         class="w-full h-auto rounded-3xl shadow-2xl object-cover">
+                    
+                    <!-- Decorative Dots -->
+                    <div class="absolute -bottom-6 -left-6 w-24 h-24 opacity-80 hidden lg:block">
+                        <svg viewBox="0 0 100 100" fill="#FF9B42">
+                            <circle cx="10" cy="10" r="3"/>
+                            <circle cx="30" cy="10" r="3"/>
+                            <circle cx="50" cy="10" r="3"/>
+                            <circle cx="70" cy="10" r="3"/>
+                            <circle cx="90" cy="10" r="3"/>
+                            
+                            <circle cx="10" cy="30" r="3"/>
+                            <circle cx="30" cy="30" r="3"/>
+                            <circle cx="50" cy="30" r="3"/>
+                            <circle cx="70" cy="30" r="3"/>
+                            <circle cx="90" cy="30" r="3"/>
+                            
+                            <circle cx="10" cy="50" r="3"/>
+                            <circle cx="30" cy="50" r="3"/>
+                            <circle cx="50" cy="50" r="3"/>
+                            <circle cx="70" cy="50" r="3"/>
+                            <circle cx="90" cy="50" r="3"/>
+                            
+                            <circle cx="10" cy="70" r="3"/>
+                            <circle cx="30" cy="70" r="3"/>
+                            <circle cx="50" cy="70" r="3"/>
+                            <circle cx="70" cy="70" r="3"/>
+                            <circle cx="90" cy="70" r="3"/>
+                            
+                            <circle cx="10" cy="90" r="3"/>
+                            <circle cx="30" cy="90" r="3"/>
+                            <circle cx="50" cy="90" r="3"/>
+                            <circle cx="70" cy="90" r="3"/>
+                            <circle cx="90" cy="90" r="3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <!-- Title -->
+        <h2 class="text-3xl font-bold text-[#496d9e] mb-14">
+            What WayWay Does
+        </h2>
+
+        <!-- Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#496d9e] mb-5">
+                    <svg class="w-10 h-10 text-[#496d9e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 20l-5.447-2.724A2 2 0 013 15.382V6.618a2 2 0 011.553-1.894L9 2m6 18l5.447-2.724A2 2 0 0021 15.382V6.618a2 2 0 00-1.553-1.894L15 2M9 2v18m6-18v18"/>
+                    </svg>
+                </div>
+
+                <h3 class="font-semibold text-lg text-[#496d9e] mb-2">
+                    Destination Recommendations
+                </h3>
+
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    WayWay provides recommendations for destinations, events, and travel activities
+                    based on ratings and user reviews.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#496d9e] mb-5">
+                    <svg class="w-10 h-10 text-[#496d9e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z"/>
+                        <circle cx="12" cy="11" r="2"/>
+                    </svg>
+                </div>
+
+                <h3 class="font-semibold text-lg text-[#496d9e] mb-2">
+                    Digital Map & Location Info
+                </h3>
+
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Digital map integration to display destination locations,
+                    travel routes, and surrounding information accurately and intuitively.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#496d9e] mb-5">
+                    <svg class="w-10 h-10 text-[#496d9e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M8 10h.01M12 10h.01M16 10h.01M21 16c0 1.657-1.79 3-4 3H8l-5 3V6c0-1.657 1.79-3 4-3h10c2.21 0 4 1.343 4 3v10z"/>
+                    </svg>
+                </div>
+
+                <h3 class="font-semibold text-lg text-[#496d9e] mb-2">
+                    Chatbot & Auto Itinerary
+                </h3>
+
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    AI chatbot helps answer traveler questions and
+                    automatically creates travel itineraries based on user preferences.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>

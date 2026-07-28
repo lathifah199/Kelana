@@ -1,0 +1,28 @@
+$kind: http-request
+name: 'Register'
+method: POST
+url: '{{base_url}}/register'
+order: 9000
+headers:
+  - key: Accept
+    value: 'application/json'
+  - key: X-CSRF-TOKEN
+    value: '{{csrf_token}}'
+body:
+  type: urlencoded
+  content:
+    - key: name
+      value: 'Test Wisatawan'
+    - key: email
+      value: '{{wisatawan_email}}'
+    - key: password
+      value: '{{wisatawan_password}}'
+    - key: password_confirmation
+      value: '{{wisatawan_password}}'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Register returns 200, 302, or 422", function() {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 419, 422]);
+      });

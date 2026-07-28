@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Kategori;
+use Illuminate\Http\Request;
+
+class KategoriController extends Controller
+{
+    /**
+     * Display list kategori
+     */
+    public function index()
+    {
+        $kategori = Kategori::withCount('destinasi')->get();
+        return view('admin.kategori.index', compact('kategori'));
+    }
+
+    /**
+     * Store new kategori
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama_kategori' => 'required|string|max:255',
+            'deskripsi_kategori' => 'nullable|string',
+        ]);
+
+        Kategori::create($request->all());
+
+        return redirect()->back()->with('success', 'Category created successfully!');
+    }
+
+    /**
+     * Update kategori
+     */
+    public function update(Request $request, Kategori $kategori)
+    {
+        $request->validate([
+            'nama_kategori' => 'required|string|max:255',
+            'deskripsi_kategori' => 'nullable|string',
+        ]);
+
+        $kategori->update($request->all());
+
+        return redirect()->route('admin.kategori.index')
+            ->with('success', 'Category updated successfully!');
+    }
+
+    /**
+     * Get kategori data for edit modal (AJAX)
+     */
+    public function getData(Kategori $kategori)
+    {
+        return response()->json($kategori);
+    }
+
+    // Method untuk hapus kategori
+public function destroy(Kategori $kategori)
+{
+    // opsional: cegah hapus kalau masih ada destinasi terkait
+    if ($kategori->destinasi()->exists()) {
+        return redirect()->route('admin.kategori.index')
+            ->with('error', 'Category cannot be deleted because it still has destinations.');
+    }
+
+    $kategori->delete();
+
+    return redirect()->route('admin.kategori.index')
+        ->with('success', 'Category deleted successfully!');
+}
+
+}

@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "test:all": "php artisan test --env=testing",
+        "test:unit": "php artisan test --env=testing --testsuite=Unit",
+        "test:feature": "php artisan test --env=testing --testsuite=Feature",
+        "test:system": "php artisan test --env=testing --filter=SystemTest",
+        "test:uat": "php artisan test --env=testing --filter=UserAcceptanceTest",
+        "test:perf": "npx artillery run load-test.yml"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.11",
+        "@tailwindcss/typography": "^0.5.19",
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.7.4",
+        "concurrently": "^9.0.1",
+        "flowbite": "^4.0.1",
+        "laravel-vite-plugin": "^1.2.0",
+        "tailwindcss": "^4.1.18",
+        "vite": "^6.0.11"
+    }
+}

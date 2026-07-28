@@ -1,0 +1,5 @@
+workspace:
+  id: ba739a38-b6a2-4a6a-85ec-7cd603928b0c
+cloudResources:
+  collections:
+    ../postman/collections/WayWay API Collection-1: 53995350-2154e874-fd3b-4caa-baab-bf48bba1f52f

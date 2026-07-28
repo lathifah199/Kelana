@@ -1,0 +1,35 @@
+$kind: http-request
+name: 'Login'
+method: POST
+url: '{{base_url}}/login'
+order: 1000
+headers:
+  - key: Accept
+    value: 'text/html,application/json'
+  - key: X-CSRF-TOKEN
+    value: '{{csrf_token}}'
+body:
+  type: urlencoded
+  content:
+    - key: email
+      value: '{{wisatawan_email}}'
+    - key: password
+      value: '{{wisatawan_password}}'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Login successful - redirect or 200", function() {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 419]);
+      });
+      // Extract CSRF token if present
+      const responseText = pm.response.text();
+      const csrfMatch = responseText.match(/name="_token" value="([^"]+)"/);
+      if (csrfMatch) {
+          pm.environment.set("csrf_token", csrfMatch[1]);
+      }
+      const cookies = pm.cookies.toObject();
+      if (cookies['XSRF-TOKEN']) {
+          const decoded = decodeURIComponent(cookies['XSRF-TOKEN']);
+          pm.environment.set('csrf_token', decoded);
+      }

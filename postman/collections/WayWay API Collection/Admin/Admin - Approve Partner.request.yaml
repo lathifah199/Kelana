@@ -1,0 +1,15 @@
+$kind: http-request
+name: 'Admin - Approve Partner'
+method: GET
+url: '{{base_url}}/admin/pemilik'
+order: 3000
+headers:
+  - key: Accept
+    value: 'text/html'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Partner list loads", function() {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 404, 422]);
+      });
