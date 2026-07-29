@@ -1,39 +1,39 @@
-# WayWay 🌍✈️
+# KELANA
 
-WayWay is an AI-powered tourism web application designed to help travelers discover destinations, obtain travel information, and generate personalized travel itineraries. The platform leverages Natural Language Processing (NLP) and recommendation systems to provide an interactive and customized travel-planning experience.
+KELANA is an AI-powered tourism web application designed to help travelers discover destinations, obtain travel information, and generate personalized travel itineraries. The platform leverages Natural Language Processing (NLP) and recommendation systems to provide an interactive and customized travel-planning experience.
 
 ## Overview
 
 Planning a trip often requires searching through multiple sources to find destinations, activities, and travel information. WayWay simplifies this process by integrating destination recommendations, travel information, and itinerary generation into a single platform.
 
-Through the Waybot chatbot, users can ask travel-related questions in natural language and receive recommendations tailored to their interests and preferences.
+Through the El-bot chatbot, users can ask travel-related questions in natural language and receive recommendations tailored to their interests and preferences.
 
 ## Key Features
 
-### 🤖 AI Travel Assistant (Waybot)
+### AI Travel Assistant (El-bot)
 
 * NLP-based chatbot for travel inquiries
 * Personalized destination recommendations
 * Interactive travel guidance and information
 
-### 🗺️ Destination Discovery
+### Destination Discovery
 
 * Browse tourist destinations by city
 * View destination details and descriptions
 * Explore recommended attractions based on user preferences
 
-### 📅 Smart Itinerary Generator
+### Smart Itinerary Generator
 
 * Automatically generates travel itineraries
 * Personalized scheduling based on selected destinations
 * Helps users organize their trips efficiently
 
-### ⭐ Review System
+### Review System
 
 * Users can submit reviews after visiting destinations
 * Supports community-driven destination insights
 
-### 👥 Role-Based Access
+### Role-Based Access
 
 * Tourist users
 * Travel agent partners
