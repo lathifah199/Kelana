@@ -13,7 +13,7 @@
     {{-- Header --}}
     <div class="flex items-center justify-between mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-[#496d9e] ">My Trips</h1>
+            <h1 class="text-3xl font-bold text-[#5F5A98] ">My Trips</h1>
             <p class="text-slate-500 text-sm mt-1">All your past AI-generated itineraries</p>
         </div>
         <a href="{{ route('itinerary.index') }}"

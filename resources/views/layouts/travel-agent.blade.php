@@ -14,7 +14,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#9eccdb',
+                        primary: '#8e9ddcff',
                         accent: '#f4dbb4',
                         dark: '#4e4e4e',
                     },
@@ -62,7 +62,7 @@
 @endif
 
 <!-- Navbar -->
-<nav class="bg-gradient-to-r from-primary to-blue-400 shadow-lg fixed w-full z-30">
+<nav class="bg-gradient-to-r from-primary to-[#BCB8CC] shadow-lg fixed w-full z-30">
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
 
@@ -74,8 +74,8 @@
                 </button>
                 <div class="flex items-center ml-4 lg:ml-0">
                     <img src="{{ asset('assets/Logo/logoo.png') }}" alt="WayWay Logo" class="h-10 ">
-                    <span class="ml-3 font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#c6c4c9] via-[#415c7f] to-[#c6c4c9]">
-                        WayWay
+                    <span class="ml-3 font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#c6c4c9] via-[#7949BB] to-[#c6c4c9]">
+                        Kelana
                     </span>
                 </div>
             </div>

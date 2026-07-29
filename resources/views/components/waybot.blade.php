@@ -54,7 +54,7 @@
                     <span class="waybot-online-dot"></span>
                 </div>
                 <div>
-                    <p class="waybot-name">Waybot</p>
+                    <p class="waybot-name">El-bot</p>
                     <p class="waybot-status"><span class="waybot-status-dot"></span>Asisten Wisata Batam</p>
                 </div>
             </div>
@@ -82,7 +82,7 @@
          alt="WayWay Logo"
          class="w-30 object-contain">
 </div>
-                    <p class="waybot-welcome-title">Hello! I'm Waybot</p>
+                    <p class="waybot-welcome-title">Hello! I'm El-bot</p>
                     <p class="waybot-welcome-sub">Your smart travel assistant in Batam. Ask anything — recommendations, prices, or best routes!</p>
                     <div class="waybot-suggestions">
                         <button @click="sendSuggestion('Recommend tourist destinations in Batam')" class="waybot-suggestion-chip">🏝️ Travel recommendations</button>
@@ -215,15 +215,15 @@
     position: relative;
     width: 56px; height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #5b9ac7, #3d7aab);
+    background: linear-gradient(135deg, #9371b2ff, #3d7aab);
     border: none; cursor: pointer;
-    box-shadow: 0 4px 20px rgba(91,154,199,0.45);
+    box-shadow: 0 4px 20px rgba(143, 91, 199, 0.45);
     display: flex; align-items: center; justify-content: center;
     color: white;
     transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
 }
 .waybot-fab:hover { transform: scale(1.08); }
-.waybot-fab--open { background: linear-gradient(135deg, #496d9e, #3a5a85); }
+.waybot-fab--open { background: linear-gradient(135deg, #6f499eff, #3d7aab); }
 .waybot-fab-icon { display: flex; align-items: center; justify-content: center; position: absolute; }
 .waybot-notif-dot {
     position: absolute; top: 4px; right: 4px;
@@ -275,7 +275,7 @@
 /* HEADER */
 .waybot-header {
     padding: 14px 16px;
-    background: linear-gradient(135deg, #5b9ac7, #3d7aab);
+    background: linear-gradient(135deg, #b78dd3ff, #3d7aab);
     display: flex; align-items: center; justify-content: space-between;
     flex-shrink: 0;
 }

@@ -194,7 +194,7 @@
 
 <div class="flex justify-center mt-7 mb-8">
     <a href="{{ route('wisatawan.beranda') }}"
-       class="bg-[#5b9ac7] hover:bg-[#496d9e]
+       class="bg-[#5b9ac7] hover:bg-[#5F5A98]
               text-white font-medium
               rounded-full px-6 py-2 text-sm transition">
         Back to Home

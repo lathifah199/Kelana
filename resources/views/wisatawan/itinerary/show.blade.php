@@ -25,7 +25,7 @@
     {{-- Page header --}}
     <div class="flex items-start justify-between gap-4 mb-8">
         <div>
-            <h1 class="text-2xl font-bold text-[#496d9e]">Your Itinerary is Ready!</h1>
+            <h1 class="text-2xl font-bold text-[#5F5A98]">Your Itinerary is Ready!</h1>
             <p class="text-slate-500 text-sm mt-1">
                 {{ \Carbon\Carbon::parse($history->tanggal_kunjungan)->format('d F Y') }} &middot;
                 @php
@@ -49,7 +49,7 @@
 
             {{-- Download PDF --}}
             <a href="{{ route('itinerary.download', $history->id) }}"
-                class="flex items-center gap-2 px-4 py-2 bg-[#fefaf6] text-[#496d9e] border border-[#d1c9b8] rounded-xl text-sm font-medium hover:bg-green-600 transition">
+                class="flex items-center gap-2 px-4 py-2 bg-[#fefaf6] text-[#5F5A98] border border-[#d1c9b8] rounded-xl text-sm font-medium hover:bg-green-600 transition">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
@@ -70,15 +70,15 @@
     {{-- Stats --}}
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-center">
-            <p class="text-3xl font-bold text-[#496d9e]">{{ $history->stop_count }}</p>
+            <p class="text-3xl font-bold text-[#5F5A98]">{{ $history->stop_count }}</p>
             <p class="text-xs text-slate-500 mt-1 font-medium uppercase tracking-wide">Stops</p>
         </div>
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-center">
-            <p class="text-3xl font-bold text-[#496d9e]">{{ $history->total_distance }}</p>
+            <p class="text-3xl font-bold text-[#5F5A98]">{{ $history->total_distance }}</p>
             <p class="text-xs text-slate-500 mt-1 font-medium uppercase tracking-wide">km Total</p>
         </div>
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-center">
-            <p class="text-3xl font-bold text-[#496d9e]">{{ $history->formatted_duration }}</p>
+            <p class="text-3xl font-bold text-[#5F5A98]">{{ $history->formatted_duration }}</p>
             <p class="text-xs text-slate-500 mt-1 font-medium uppercase tracking-wide">Duration</p>
         </div>
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-center">
@@ -150,7 +150,7 @@
                                     style="width: {{ round(($stop['bayesian_score'] ?? 0) * 100) }}%">
                                 </div>
                             </div>
-                            <span class="text-xs font-bold text-[#496d9e]">
+                            <span class="text-xs font-bold text-[#5F5A98]">
                                 {{ round(($stop['bayesian_score'] ?? 0) * 100) }}%
                             </span>
                         </div>
@@ -207,7 +207,7 @@
     <div class="bg-white rounded-2xl border border-slate-100 shadow-sm mb-6">
         <div class="px-5 py-4 border-b border-slate-100 flex items-center gap-2">
             <div>
-                <h2 class="text-2xl font-bold text-[#496d9e]">Travel Tips</h2>
+                <h2 class="text-2xl font-bold text-[#5F5A98]">Travel Tips</h2>
                 <p class="text-xs text-slate-400 mt-0.5">Personalized for your {{ $companionLabels[$companion] ?? $companion }} trip</p>
             </div>
         </div>
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Origin marker
     const originIcon = L.divIcon({
-        html: '<div style="width:36px;height:36px;background:white;border:3px solid #496d9e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;color:#496d9e;box-shadow:0 3px 10px rgba(0,0,0,0.2)">S</div>',
+        html: '<div style="width:36px;height:36px;background:white;border:3px solid #5F5A98;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;color:#5F5A98;box-shadow:0 3px 10px rgba(0,0,0,0.2)">S</div>',
         className: '', iconSize: [36,36], iconAnchor: [18,18],
     });
     L.marker([origin.lat, origin.lon], { icon: originIcon })

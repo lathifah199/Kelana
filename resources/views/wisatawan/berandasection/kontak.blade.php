@@ -4,7 +4,8 @@
 
         {{-- Header --}}
         <div class="text-center mb-10">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-2" style="color: #496d9e;">
+                            <h2 class="text-3xl sm:text-4xl text-[#695596] mb-6 text-center"
+            style="font-family: 'Changa One', cursive;">
                 Contact Us
             </h2>
             <p class="text-gray-500 text-base font-medium">

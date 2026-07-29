@@ -3,16 +3,17 @@
 
         <!-- Title -->
         <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-[#496d9e] mb-3">
+                 <h2 class="text-3xl sm:text-4xl text-[#695596] mb-6 text-center"
+            style="font-family: 'Changa One', cursive;">
                 Batam City Tourism Map
             </h2>
-            <p class="text-[#496d9e]">
+            <p class="text-[#5F5A98]">
                 Explore Batam City as a premier travel destination hub.
             </p>
         </div>
 
         <!-- MAP -->
-        <div class="rounded-3xl overflow-hidden shadow-lg border-[#496d9e]">
+        <div class="rounded-3xl overflow-hidden shadow-lg border-[#5F5A98]">
             <iframe
                 src="https://www.google.com/maps?q=Batam,Indonesia&output=embed"
                class="w-full h-[300px] sm:h-[400px] lg:h-[520px] ">

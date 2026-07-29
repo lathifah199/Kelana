@@ -1,4 +1,4 @@
-<footer class="bg-[#9ECCDB] border-t text-white mt-auto">
+<footer class="bg-[#D4C9E9]/60 border-t text-white mt-auto">
 
     <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between">
 
@@ -11,17 +11,17 @@
 
                 <h3 class="font-bold text-lg">
                     <span class="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#c6c4c9] via-[#415c7f] to-[#c6c4c9]">
-                        WayWay
+                        Kelana
                     </span>
                 </h3>
             </div>
 
-            <p class="text-xs italic mb-2">
-                Find your way, Enjoy your way
+            <p class="text-xs italic mb-2 text-[#5F5A98]">
+                Know more, Love more, Navigate the Nusantara
             </p>
 
-            <p class="font-medium text-sm leading-relaxed text-left">
-                waywaypolibatam@gmail.com
+            <p class="font-medium text-sm leading-relaxed text-left text-[#5F5A98]">
+                Kelanapolibatam@gmail.com
             </p>
         </div>
 

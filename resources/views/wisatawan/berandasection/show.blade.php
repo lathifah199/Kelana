@@ -153,7 +153,7 @@
         {{-- PRICE --}}
         <div class="lg:text-right">
             <div class="text-sm text-gray-500 mb-1">Starting from</div>
-            <div class="text-3xl lg:text-4xl font-bold text-[#496d9e]">
+            <div class="text-3xl lg:text-4xl font-bold text-[#5F5A98]">
                 Rp {{ number_format($destinasi->harga, 0, ',', '.') }}
             </div>
             <div class="text-sm text-gray-500">/day</div>
@@ -179,7 +179,7 @@
         <div class="bg-white rounded-3xl shadow-md p-6 lg:p-8 mb-6">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
-                    <svg class="w-6 h-6 text-[#496d9e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-[#5F5A98]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
                     </svg>
                     Visitor Reviews
@@ -187,7 +187,7 @@
 
                 @if($destinasi->ulasan->count())
                 <div class="text-right">
-                    <div class="text-2xl font-bold text-[#496d9e]">{{ number_format($avgRating ?? 5, 1) }}</div>
+                    <div class="text-2xl font-bold text-[#5F5A98]">{{ number_format($avgRating ?? 5, 1) }}</div>
                     <div class="text-xs text-gray-500">{{ $destinasi->ulasan->count() }} reviews</div>
                 </div>
                 @endif
@@ -200,7 +200,7 @@
                     @foreach($destinasi->ulasan as $u)
                     <div class="w-72 p-4 bg-gray-50 rounded-2xl flex-shrink-0">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 bg-[#496d9e] rounded-full flex items-center justify-center text-white font-semibold">
+                            <div class="w-10 h-10 bg-[#5F5A98] rounded-full flex items-center justify-center text-white font-semibold">
                                 {{ strtoupper(substr($u->user->name, 0, 1)) }}
                             </div>
                             <div class="flex-1 min-w-0">
@@ -271,7 +271,7 @@
             <div class="pt-6 border-t border-gray-200 text-center">
                 <p class="text-gray-600 mb-3 text-sm">Login to leave a review</p>
                 <a href="{{ route('wisatawan.login') }}"
-                   class="inline-flex items-center gap-2 px-6 py-2 bg-[#5b9ac7] hover:bg-[#496d9e]
+                   class="inline-flex items-center gap-2 px-6 py-2 bg-[#5b9ac7] hover:bg-[#5F5A98]
                           text-white font-medium rounded-xl transition text-sm">
                     Login Now
                 </a>
@@ -281,7 +281,7 @@
 
         <div class="flex justify-center mt-7 mb-8">
             <a href="{{ route('wisatawan.beranda') }}"
-               class="bg-[#5b9ac7] hover:bg-[#496d9e]
+               class="bg-[#5b9ac7] hover:bg-[#5F5A98]
                       text-white font-medium
                       rounded-full px-6 py-2 text-sm transition">
                 Back to Home

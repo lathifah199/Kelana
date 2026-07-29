@@ -10,10 +10,10 @@
     transition: background 0.2s, color 0.2s;
 }
 .filter-item:hover {
-    background: #f9d497;
+    background: rgba(202, 174, 225, 1);
 }
 .filter-active {
-    background: rgb(244, 219, 180);
+    background: #D4C9E9;
     color: #4E4E4E;
 }
 .filter-fade-right {
@@ -33,7 +33,7 @@
 }
 .dot-active {
     width: 24px;
-    background: #496d9e;
+    background: #5F5A98;
 }
 .dot-hidden {
     display: none;
@@ -50,8 +50,9 @@
 
         <!-- LEFT: TITLE + FILTER -->
         <div class="flex flex-col gap-4 min-w-0 flex-1">
-            <h2 class="text-3xl font-bold text-[#496d9e]">
-                Popular Destinations
+                <h2 class="text-3xl sm:text-4xl text-[#695596] mb-6 text-left"
+            style="font-family: 'Changa One', cursive;">
+               Popular Destinations
             </h2>
 
             <!-- FILTER SCROLL WRAPPER -->
@@ -86,7 +87,7 @@
         <div class="self-start sm:self-center sm:ml-4 flex-shrink-0">
             <a href="{{ route('destinasi.index') }}"
                class="inline-flex items-center gap-2
-                      bg-[#5b9ac7] hover:bg-[#496d9e]
+                      bg-[#6F6C8F] hover:bg-[#5F5A98]
                       text-white font-medium
                       rounded-full px-6 py-2 text-sm transition">
                 See All
@@ -102,7 +103,7 @@
             class="hidden lg:flex absolute -left-15 top-1/2 -translate-y-1/2 z-20
                    w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                    text-gray-700 text-2xl font-light
-                   hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                   hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
             ‹
         </button>
 
@@ -110,7 +111,7 @@
             class="hidden lg:flex absolute -right-15 top-1/2 -translate-y-1/2 z-20
                    w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                    text-gray-700 text-2xl font-light
-                   hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                   hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
             ›
         </button>
 
@@ -153,7 +154,7 @@
                                 </span>
                             </div>
 
-                            <button class="px-4 sm:px-5 py-2 bg-[#496d9e] hover:bg-[#0f2942]
+                            <button class="px-4 sm:px-5 py-2 bg-[#5F5A98] hover:bg-[#0f2942]
                                           text-white text-xs sm:text-sm font-semibold rounded-full
                                           transition-all duration-300">
                                 Details

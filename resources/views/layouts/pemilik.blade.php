@@ -15,7 +15,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#9eccdb',
+                        primary: '#c29fd1ff',
                         accent: '#f4dbb4',
                         dark: '#4e4e4e',
                     },
@@ -31,7 +31,7 @@
 </head>
 <body class="bg-gray-50 font-sans">
     
-    <nav class="bg-gradient-to-r from-primary to-blue-400 text-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="bg-gradient-to-r from-primary to-[#BCB8CC] text-white shadow-lg fixed w-full top-0 z-50">
         <div class="px-4 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-4">
@@ -48,8 +48,8 @@
                         </div>
                         
                         <div>
-                            <h1 class="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#c6c4c9] via-[#415c7f] to-[#c6c4c9]">
-                                WayWay
+                            <h1 class="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#c6c4c9] via-[#7949BB] to-[#c6c4c9]">
+                                Kelana
                             </h1>
                             <p class="text-xs text-white/80">Tourism Owner</p>
                         </div>

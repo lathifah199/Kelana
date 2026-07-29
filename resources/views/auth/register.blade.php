@@ -7,11 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+
     <style>
         body { font-family: 'Poppins', sans-serif; }
         .bg-overlay {
-            background: linear-gradient(135deg, rgba(80, 141, 177, 0.7), rgba(167, 191, 228, 0.6)),
+background: linear-gradient(135deg, rgba(80, 117, 177, 0.7), rgba(218, 167, 228, 0.6)),
                         url("{{ asset('Background/auth.jpg') }}") center/cover fixed;
         }
         .bg-overlay::before {
@@ -38,7 +41,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#9eccdb',
+                        brand: '#5F5A98',
                     }
                 }
             }
@@ -53,9 +56,9 @@
         <div class="hidden lg:flex flex-col justify-center text-white p-10 lg:p-12">
             <div class="flex items-center gap-3 mb-3 animate-fadeInDown">
                 <img src="{{ asset('assets/Logo/logoo.png') }}" alt="Logo" class="h-10">
-                <span class="text-2xl font-bold tracking-[2px]">WAYWAY</span>
+                <span class="text-2xl text-[#FEFADD] tracking-[2px]" style="font-family: 'Changa One', cursive;">Kelana</span>
             </div>
-            <h1 class="text-5xl lg:text-[56px] font-extrabold leading-tight mb-5 drop-shadow-lg animate-fadeInUp">
+            <h1 class="text-5xl lg:text-[56px] leading-tight mb-5 drop-shadow-lg animate-fadeInUp" style="font-family: 'Changa One', cursive;">
                 FIND<br>YOUR DESTINATION
             </h1>
             <p class="text-xl font-light mb-2 opacity-95 animate-fadeInUp" style="animation-delay: 0.1s;">

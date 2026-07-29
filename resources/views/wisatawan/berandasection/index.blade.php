@@ -31,7 +31,7 @@
 
         <!-- HEADER -->
         <div class="mb-8">
-            <h1 class="text-3xl font-bold text-[#496d9e] mt-4 mb-4">
+            <h1 class="text-3xl font-bold text-[#5F5A98] mt-4 mb-4">
                 All Destinations
             </h1>
 
@@ -91,11 +91,11 @@
                         <div class="flex items-center justify-between mt-4">
                             <div class="flex flex-col">
                                 <span class="text-xs text-gray-400">Starting from</span>
-                                <span class="text-[#496d9e] font-bold">
+                                <span class="text-[#5F5A98] font-bold">
                                     Rp {{ number_format($item->harga, 0, ',', '.') }}
                                 </span>
                             </div>
-                            <span class="px-4 py-2 bg-[#496d9e] text-white text-sm rounded-full">
+                            <span class="px-4 py-2 bg-[#5F5A98] text-white text-sm rounded-full">
                                 Details
                             </span>
                         </div>
@@ -123,17 +123,17 @@
                     <span class="px-4 py-2 rounded-full bg-gray-100 text-gray-400 text-sm cursor-not-allowed">← Prev</span>
                 @else
                     <a href="{{ $destinasi->previousPageUrl() }}"
-                       class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#496d9e] hover:text-white transition">
+                       class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#5F5A98] hover:text-white transition">
                         ← Prev
                     </a>
                 @endif
 
                 @foreach($destinasi->getUrlRange(1, $destinasi->lastPage()) as $page => $url)
                     @if($page == $destinasi->currentPage())
-                        <span class="px-4 py-2 rounded-full bg-[#496d9e] text-white text-sm font-semibold">{{ $page }}</span>
+                        <span class="px-4 py-2 rounded-full bg-[#5F5A98] text-white text-sm font-semibold">{{ $page }}</span>
                     @else
                         <a href="{{ $url }}&{{ http_build_query(request()->except('page')) }}"
-                           class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#496d9e] hover:text-white transition">
+                           class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#5F5A98] hover:text-white transition">
                             {{ $page }}
                         </a>
                     @endif
@@ -141,7 +141,7 @@
 
                 @if($destinasi->hasMorePages())
                     <a href="{{ $destinasi->nextPageUrl() }}"
-                       class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#496d9e] hover:text-white transition">
+                       class="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:bg-[#5F5A98] hover:text-white transition">
                         Next →
                     </a>
                 @else

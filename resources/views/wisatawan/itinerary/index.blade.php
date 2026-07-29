@@ -92,7 +92,7 @@
             {{-- My Trips → history page --}}
             <a href="{{ route('itinerary.history') }}"
                class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg
-           bg-[#5B9AC7] text-white hover:bg-[#496d9e] transition">
+           bg-[#5B9AC7] text-white hover:bg-[#5F5A98] transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>

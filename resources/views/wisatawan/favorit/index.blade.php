@@ -7,7 +7,7 @@
 
         <!-- HEADER -->
         <div class="mb-8">
-            <h1 class="text-3xl font-bold text-[#496d9e] mb-4">
+            <h1 class="text-3xl font-bold text-[#5F5A98] mb-4">
                 My Favorite Destinations
             </h1>
         </div>
@@ -57,11 +57,11 @@
                             <div class="flex items-center justify-between mt-4">
                                 <div class="flex flex-col">
                                     <span class="text-xs text-gray-400">Starting from</span>
-                                    <span class="text-[#496d9e] font-bold">
+                                    <span class="text-[#5F5A98] font-bold">
                                         Rp {{ number_format($item->harga, 0, ',', '.') }}
                                     </span>
                                 </div>
-                                <span class="px-4 py-2 bg-[#496d9e] text-white text-sm rounded-full">
+                                <span class="px-4 py-2 bg-[#5F5A98] text-white text-sm rounded-full">
                                     Details
                                 </span>
                             </div>
@@ -103,7 +103,7 @@
                     Explore destinations and save the ones you love!
                 </p>
                 <a href="{{ route('wisatawan.beranda') }}"
-                   class="inline-flex items-center gap-2 px-6 py-3 bg-[#5b9ac7] hover:bg-[#496d9e]
+                   class="inline-flex items-center gap-2 px-6 py-3 bg-[#5b9ac7] hover:bg-[#5F5A98]
                           text-white font-medium rounded-lg transition">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>

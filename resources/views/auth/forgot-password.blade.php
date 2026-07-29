@@ -11,7 +11,7 @@
     <style>
         body { font-family: 'Poppins', sans-serif; }
         .bg-overlay {
-            background: linear-gradient(135deg, rgba(80, 141, 177, 0.7), rgba(167, 191, 228, 0.6)),
+ background: linear-gradient(135deg, rgba(80, 117, 177, 0.7), rgba(218, 167, 228, 0.6)),
                         url("{{ asset('Background/auth.jpg') }}") center/cover fixed;
         }
         .bg-overlay::before {
@@ -47,7 +47,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#9eccdb',
+                        brand: '#5F5A98',
                     }
                 }
             }

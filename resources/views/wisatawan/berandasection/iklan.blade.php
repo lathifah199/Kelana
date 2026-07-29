@@ -11,7 +11,7 @@
 }
 .iklan-dot-active {
     width: 24px;
-    background: #496d9e;
+    background: #5F5A98;
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -22,11 +22,12 @@
 
     <!-- HEADER - centered with subtitle -->
     <div class="text-center mb-10">
-        <span class="text-sm font-semibold text-[#496d9e] tracking-widest uppercase">
+        <span class="text-sm font-semibold text-[#5F5A98] tracking-widest uppercase">
             Exclusive Deals
         </span>
-        <h2 class="mt-2 text-3xl font-bold text-[#496d9e]">
-            Special Offers
+                <h2 class="text-3xl sm:text-4xl text-[#695596] mb-6 text-center"
+            style="font-family: 'Changa One', cursive;">
+           Special Offers
         </h2>
         <p class="mt-3 text-gray-500 max-w-xl mx-auto text-sm">
             Don't miss out — grab the latest deals from top destinations and travel experiences around Batam.
@@ -40,7 +41,7 @@
             class="hidden lg:flex absolute -left-15 top-1/2 -translate-y-1/2 z-20
                    w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                    text-gray-700 text-2xl font-light
-                   hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                   hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
             ‹
         </button>
 
@@ -48,7 +49,7 @@
             class="hidden lg:flex absolute -right-15 top-1/2 -translate-y-1/2 z-20
                    w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                    text-gray-700 text-2xl font-light
-                   hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                   hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
             ›
         </button>
 
@@ -83,7 +84,7 @@
                         </p>
                         <div class="flex items-center justify-between pt-2 border-t border-gray-100">
                             <span class="text-xs text-gray-400"></span>
-                            <button class="px-4 sm:px-5 py-2 bg-[#1a3b5d] hover:bg-[#0f2942]
+                            <button class="px-4 sm:px-5 py-2 bg-[#5F5A98] hover:bg-[#0f2942]
                                           text-white text-xs sm:text-sm font-semibold rounded-full
                                           transition-all duration-300">
                                 View Details

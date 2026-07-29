@@ -20,7 +20,7 @@
 
 <header class="fixed top-4 w-full z-100000">
     <div class="max-w-[1200px] mx-auto px-4">
-        <div class="bg-[#5CA6BC]/80 backdrop-blur
+        <div class="bg-[#D4C9E9]/60 backdrop-blur
                     rounded-full
                     border border-sky-200
                     px-6 h-16
@@ -31,43 +31,43 @@
                 <img src="{{ asset('assets/logo/logoo.png') }}"
                      class="h-10" alt="WayWay">
 <span class="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#6EE7FF] via-[#244774] to-[#F2C17E] ">
-    WayWay
+    Kelana
 </span>
             </div>
 
             <!-- DESKTOP MENU -->
-            <nav class="hidden lg:flex items-center gap-2 text-sm text-white">
+            <nav class="hidden lg:flex items-center gap-2 text-sm text-[#5F5A98]">
                 <a href="{{ route('wisatawan.beranda') }}"
                    class="px-4 py-2 rounded-full font-semibold
-                           hover:bg-sky-100 hover:text-sky-600">
+                           hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
                     Dashboard
                 </a>
 
                 <a href="/#destinasi"
                    class="px-4 py-2 rounded-full font-semibold
-                           hover:bg-sky-100 hover:text-sky-600">
+                           hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
                     Destination
                 </a>
 
                 <a href="/#tentang"
                    class="px-4 py-2 rounded-full font-semibold
-                           hover:bg-sky-100 hover:text-sky-600">
+                           hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
                     About
                 </a>
 
                 <a href="/#kontak"
                    class="px-4 py-2 rounded-full font-semibold
-                           hover:bg-sky-100 hover:text-sky-600">
+                           hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
                     Contact
                 </a>
 @auth
 <a href="{{ route('itinerary.index') }}"
-   class="px-4 py-2 rounded-full font-semibold hover:bg-sky-100 hover:text-sky-600">
+   class="px-4 py-2 rounded-full font-semibold hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
     Itinerary
 </a>
 @else
 <a href="{{ route('wisatawan.login') }}"
-   class="px-4 py-2 rounded-full font-semibold hover:bg-sky-100 hover:text-sky-600">
+   class="px-4 py-2 rounded-full font-semibold hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
     Itinerary
 </a>
 @endauth
@@ -75,7 +75,7 @@
                 <a href="#"
                    @click.prevent="window.dispatchEvent(new CustomEvent('open-waybot'))"
                    class="px-4 py-2 rounded-full font-semibold
-                          hover:bg-sky-100 hover:text-sky-600">
+                          hover:bg-[#FEFADD]/50 hover:text-[#8f89d1]">
                     Waybot
                 </a>
             </nav>
@@ -115,7 +115,7 @@
                         @if ($user && $user->avatar)
                             <img src="{{ $user->avatar }}" alt="Avatar" class="w-full h-full object-cover">
                         @else
-                            <div class="w-full h-full bg-[#5b9ac7] flex items-center justify-center">
+                            <div class="w-full h-full bg-[#A793D0] flex items-center justify-center">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z"/>
@@ -176,8 +176,8 @@
                 @else
                 <a href="{{ route('wisatawan.login') }}"
                    class="px-5 py-2 text-sm rounded-full
-                          bg-[#5b9ac7] text-white font-medium
-                          hover:bg-[#496d9e] transition">
+                          bg-[#F5DBB4] text-[#1e293b] font-medium
+                          hover:bg-[#f7e2a1] transition">
                     Login
                 </a>
                 @endauth

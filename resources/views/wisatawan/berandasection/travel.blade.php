@@ -11,7 +11,7 @@
 }
 .travel-dot-active {
     width: 24px;
-    background: #496d9e;
+    background: #5F5A98;
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -22,10 +22,11 @@
 
         {{-- Header --}}
         <div class="mb-10 text-center">
-            <span class="text-sm font-semibold text-[#496d9e] tracking-widest uppercase">
+            <span class="text-sm font-semibold text-[#5F5A98] tracking-widest uppercase">
                 Trusted Travel Agents
             </span>
-            <h2 class="mt-2 text-3xl font-bold text-[#496d9e]">
+                <h2 class="text-3xl sm:text-4xl text-[#695596] mb-6 text-center"
+            style="font-family: 'Changa One', cursive;">
                 Featured Travel Packages
             </h2>
             <p class="mt-3 text-gray-500 max-w-xl mx-auto text-sm">
@@ -41,7 +42,7 @@
                 class="hidden lg:flex absolute -left-15 top-1/2 -translate-y-1/2 z-20
                        w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                        text-gray-700 text-2xl font-light
-                       hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                       hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
                 ‹
             </button>
 
@@ -50,7 +51,7 @@
                 class="hidden lg:flex absolute -right-15 top-1/2 -translate-y-1/2 z-20
                        w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center
                        text-gray-700 text-2xl font-light
-                       hover:bg-[#496d9e] hover:text-white hover:shadow-xl transition-all">
+                       hover:bg-[#5F5A98] hover:text-white hover:shadow-xl transition-all">
                 ›
             </button>
 
@@ -73,7 +74,7 @@
                                      class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             @else
                                 <div class="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-200 flex items-center justify-center">
-                                    <svg class="w-12 h-12 text-[#496d9e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-12 h-12 text-[#5F5A98]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                               d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
                                     </svg>
@@ -83,7 +84,7 @@
                             <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
                                 {{ $package->durasi_hari }} Days
                             </span>
-                            <span class="absolute top-3 right-3 bg-[#496d9e]/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                            <span class="absolute top-3 right-3 bg-[#5F5A98]/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
                                 {{ \Carbon\Carbon::parse($package->tanggal_keberangkatan)->format('d M Y') }}
                             </span>
                         </div>
@@ -94,7 +95,7 @@
                             {{-- Travel Agent --}}
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-3.5 h-3.5 text-[#496d9e]" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-3.5 h-3.5 text-[#5F5A98]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
@@ -104,7 +105,7 @@
                             </div>
 
                             {{-- Package Name --}}
-                            <h3 class="text-base font-bold text-gray-900 mb-1 group-hover:text-[#496d9e] transition-colors line-clamp-1">
+                            <h3 class="text-base font-bold text-gray-900 mb-1 group-hover:text-[#5F5A98] transition-colors line-clamp-1">
                                 {{ $package->nama_paket }}
                             </h3>
 
@@ -112,7 +113,7 @@
                             @if ($package->destinasi)
                             <div class="flex flex-wrap gap-1 mb-3">
                                 @foreach (array_slice($package->destinasi, 0, 3) as $dest)
-                                <span class="text-xs bg-blue-50 text-[#496d9e] px-2 py-0.5 rounded-full">
+                                <span class="text-xs bg-blue-50 text-[#5F5A98] px-2 py-0.5 rounded-full">
                                     {{ $dest }}
                                 </span>
                                 @endforeach
@@ -133,7 +134,7 @@
                             <div class="mt-4 pt-4 border-t border-gray-100 flex items-end justify-between">
                                 <div>
                                     <p class="text-xs text-gray-400">Starting from</p>
-                                    <p class="text-lg font-bold text-[#496d9e]">
+                                    <p class="text-lg font-bold text-[#5F5A98]">
                                         Rp {{ number_format($package->harga_per_orang, 0, ',', '.') }}
                                         <span class="text-xs font-normal text-gray-400">/person</span>
                                     </p>
@@ -166,7 +167,7 @@
         @if ($travelPackages->count() >= 6)
         <div class="mt-8 text-center">
             <a href="{{ route('travel-packages.index') }}"
-               class="inline-flex items-center gap-2 border border-[#496d9e] text-[#496d9e] hover:bg-[#496d9e] hover:text-white transition-colors px-6 py-2.5 rounded-full text-sm font-semibold">
+               class="inline-flex items-center gap-2 border border-[#5F5A98] text-[#5F5A98] hover:bg-[#5F5A98] hover:text-white transition-colors px-6 py-2.5 rounded-full text-sm font-semibold">
                 View All Packages
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
