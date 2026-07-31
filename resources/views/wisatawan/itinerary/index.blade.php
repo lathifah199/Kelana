@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'AI Itinerary Planner — WayWay')
+@section('title', 'AI Itinerary Planner — Kelana')
 
 @push('styles')
 <style>
@@ -9,7 +9,7 @@
 
     /* Modal dark overlay */
     .modal-backdrop {
-        background: rgba(15, 23, 42, 0.65);
+        background: rgba(139, 123, 197, 0.55);
         backdrop-filter: blur(6px);
     }
 
@@ -21,8 +21,8 @@
     .companion-card { transition: all 0.15s ease; cursor: pointer; }
     .companion-card:hover { transform: translateY(-2px); }
     .companion-card.selected {
-        border-color: #0ea5e9 !important;
-        background: #f0f9ff;
+        border-color: #8678beff !important;
+        background: #F3F0FE;
     }
 
     /* ===== LOCATION SEARCH DROPDOWN ===== */
@@ -32,7 +32,7 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
     .search-result-item { transition: background 0.1s ease; }
-    .search-result-item:hover { background: #f0f9ff; }
+    .search-result-item:hover { background: #F3F0FE; }
 </style>
 @endpush
 
@@ -41,7 +41,6 @@
 
 {{-- ===================================================
      HERO SECTION
-     Video background + CTA buttons
 =================================================== --}}
 <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
 
@@ -56,15 +55,15 @@
 
     {{-- FLOATING ORBS --}}
     <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl -translate-y-1/2 opacity-20"
-         style="background: #9FCCDA;"></div>
+         style="background:#A78BFA;"></div>
     <div class="absolute bottom-0 right-1/3 w-80 h-80 rounded-full blur-3xl translate-y-1/2 opacity-15"
-         style="background: #5B9AC7;"></div>
+         style="background:#6B4CE6;"></div>
 
     {{-- CONTENT --}}
     <div class="relative z-20 text-center px-4 sm:px-6 max-w-2xl text-white">
 
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-blue-100">
-            <span class="w-2 h-2 rounded-full animate-pulse" style="background: #9FCCDA;"></span>
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-purple-100">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background:#A78BFA;"></span>
             Smart Planning &middot; Optimized Routes
         </div>
 
@@ -74,25 +73,25 @@
         </h1>
 
         <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
-            Choose your interests, set a budget, and get a personalized Batam travel plan — complete with a map and hourly schedule.
+            Choose your interests, set a budget, and get a personalized travel plan — complete with a map and hourly schedule.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
 
-            {{-- Plan My Trip → opens modal --}}
+            {{-- Plan My Trip --}}
             <button @click="openModal()"
-                class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg transition hover:bg-[#f9d497]"
-                style="background:#F4DBB4; color:#1e293b;">
+            class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg
+            bg-[#F4DBB4] text-[#1e293b] hover:bg-[#f9d497] transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
                 Plan My Trip
             </button>
 
-            {{-- My Trips → history page --}}
+            {{-- My Trips --}}
             <a href="{{ route('itinerary.history') }}"
                class="inline-flex items-center gap-3 font-bold px-8 py-4 rounded-2xl text-base shadow-lg
-           bg-[#5B9AC7] text-white hover:bg-[#5F5A98] transition">
+           bg-[#5F5A98] text-white hover:bg-[#4D497A] transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
@@ -105,52 +104,74 @@
 </section>
 
 {{-- ===================================================
- {{-- LOADING OVERLAY — WayWay style --}}
+     LOADING OVERLAY — Kelana style
+=================================================== --}}
 <div x-show="isLoading"
      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
-     style="background: rgba(27,58,92,0.75); backdrop-filter: blur(8px);">
+     style="background:rgba(132, 115, 192, 0.6); backdrop-filter:blur(8px);">
 
     {{-- Card putih --}}
     <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-sm mx-4 flex flex-col items-center gap-5 relative overflow-hidden">
 
-        {{-- Kompas + Waybot --}}
+        {{-- Ring + SVG sunset --}}
         <div class="relative w-36 h-36 flex items-center justify-center">
             {{-- Ring luar --}}
             <div class="absolute w-36 h-36 rounded-full"
-                 style="border:2.5px solid transparent; border-top-color:#4BA8C8; border-right-color:#E8C98A; animation:ww-spin 2s linear infinite;"></div>
+                 style="border:2.5px solid transparent; border-top-color:#6B4CE6; border-right-color:#F3C969; animation:ww-spin 2.5s linear infinite;"></div>
             {{-- Ring dalam dashed --}}
             <div class="absolute w-28 h-28 rounded-full"
-                 style="border:1.5px dashed rgba(91,200,212,0.4); animation:ww-spin-r 3.5s linear infinite;"></div>
-            {{-- Titik kompas --}}
-            <div class="absolute top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full" style="background:#E8C98A;"></div>
-            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full" style="background:#5BC8D4;"></div>
-            <div class="absolute left-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full" style="background:#2B7FA8;"></div>
-            <div class="absolute right-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full" style="background:#2B7FA8;"></div>
+                 style="border:1.5px dashed rgba(167,139,250,0.5); animation:ww-spin-r 4s linear infinite;"></div>
 
-            {{-- Waybot --}}
-            <div style="animation:ww-pulse 2.5s ease-in-out infinite; position:relative; z-index:2;">
-                <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); width:3px; height:10px; background:#1B3A5C; border-radius:2px;">
-                    <div style="position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:8px; height:8px; border-radius:50%; background:#4BA8C8; border:1.5px solid #2B7FA8;"></div>
-                </div>
-                <div style="width:68px; height:58px; background:white; border:2.5px solid #1B3A5C; border-radius:16px; display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 2px 12px rgba(43,127,168,0.15);">
-                    <div style="position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:9px; height:16px; background:#DCE8EF; border:2px solid #1B3A5C; border-radius:3px;"></div>
-                    <div style="position:absolute; right:-8px; top:50%; transform:translateY(-50%); width:9px; height:16px; background:#DCE8EF; border:2px solid #1B3A5C; border-radius:3px;"></div>
-                    <div style="width:48px; height:26px; background:#1B3A5C; border-radius:8px; display:flex; align-items:center; justify-content:center; gap:9px;">
-                        <div style="width:13px; height:11px; border:2.5px solid #5BC8D4; border-bottom:none; border-radius:7px 7px 0 0; animation:ww-blink 4s ease-in-out infinite; transform-origin:center bottom;"></div>
-                        <div style="width:13px; height:11px; border:2.5px solid #5BC8D4; border-bottom:none; border-left:none; border-radius:0 7px 0 0; animation:ww-blink 4s ease-in-out infinite 0.15s; transform-origin:center bottom;"></div>
-                    </div>
-                    <div style="position:absolute; bottom:-9px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:9px solid #1B3A5C;"></div>
-                    <div style="position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:7px solid white;"></div>
-                </div>
-                <span style="position:absolute; top:6px; right:-18px; color:#E8C98A; font-size:10px; animation:ww-float 2s ease-in-out infinite;">✦</span>
-                <span style="position:absolute; top:24px; left:-20px; color:#4BA8C8; font-size:7px; animation:ww-float 2.5s ease-in-out infinite 0.4s;">✦</span>
-            </div>
+            {{-- SVG sunset --}}
+            <svg width="96" height="96" viewBox="0 0 108 108"
+                 xmlns="http://www.w3.org/2000/svg"
+                 style="z-index:2; animation:ww-pulse 3s ease-in-out infinite;">
+                <defs><clipPath id="kl-itin-clip"><circle cx="54" cy="54" r="50"/></clipPath></defs>
+                <circle cx="54" cy="54" r="51" fill="#C9B8E8" stroke="#7C5CBF" stroke-width="2"/>
+                <g clip-path="url(#kl-itin-clip)">
+                    <rect x="4" y="4" width="100" height="100" fill="#D4B8F0"/>
+                    <ellipse cx="54" cy="10" rx="60" ry="30" fill="#C4A0E8" opacity="0.7"/>
+                    <ellipse cx="54" cy="28" rx="58" ry="28" fill="#E8A0C0" opacity="0.55"/>
+                    <ellipse cx="54" cy="44" rx="56" ry="24" fill="#F0B090" opacity="0.5"/>
+                    <ellipse cx="54" cy="55" rx="56" ry="18" fill="#F5C878" opacity="0.45"/>
+                    <ellipse cx="54" cy="62" rx="56" ry="12" fill="#F8D890" opacity="0.4"/>
+                    <rect x="4" y="64" width="100" height="44" fill="#9B8BD4"/>
+                    <ellipse cx="54" cy="64" rx="52" ry="7" fill="#B8A0E0" opacity="0.6"/>
+                    <ellipse cx="54" cy="70" rx="7" ry="14" fill="#F8D890" opacity="0.35"/>
+                    <path d="M4 70 Q20 66 36 70 Q52 74 68 70 Q84 66 104 70 L104 108 L4 108 Z" fill="#8878C8" opacity="0.7"/>
+                    <path d="M4 80 Q24 76 44 80 Q64 84 84 80 Q96 77 104 80 L104 108 L4 108 Z" fill="#7868B8" opacity="0.8"/>
+                    <polygon points="4,68 22,38 40,68"  fill="#B09EE0"/>
+                    <polygon points="14,68 28,46 42,68" fill="#C4B4EC"/>
+                    <polygon points="62,68 80,40 100,68" fill="#B09EE0"/>
+                    <polygon points="70,68 82,50 96,68"  fill="#C4B4EC"/>
+                    {{-- Waypoints rute --}}
+                    <circle cx="22" cy="60" r="3.5" fill="#F3C969" stroke="white" stroke-width="1.5" style="animation:ww-float 2s ease-in-out infinite;"/>
+                    <circle cx="54" cy="50" r="3.5" fill="#F3C969" stroke="white" stroke-width="1.5" style="animation:ww-float 2.3s ease-in-out infinite .3s;"/>
+                    <circle cx="84" cy="60" r="3.5" fill="#F3C969" stroke="white" stroke-width="1.5" style="animation:ww-float 2s ease-in-out infinite .6s;"/>
+                    <path d="M22 60 Q38 44 54 50 Q70 56 84 60" stroke="white" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0.6"/>
+                    <circle cx="54" cy="64" r="18" fill="#FDEBC0" opacity="0.45" style="animation:ww-sun 2s ease-in-out infinite;"/>
+                    <circle cx="54" cy="64" r="13" fill="#F8C84A"/>
+                    <circle cx="54" cy="64" r="8"  fill="#FEF0A0"/>
+                    <ellipse cx="20" cy="22" rx="11" ry="5" fill="white" opacity="0.55"/>
+                    <ellipse cx="78" cy="26" rx="9"  ry="4" fill="white" opacity="0.45"/>
+                    <circle cx="15" cy="14" r="1.5" fill="white" opacity="0.8" style="animation:ww-star 2s ease-in-out infinite;"/>
+                    <circle cx="88" cy="12" r="1.2" fill="white" opacity="0.7" style="animation:ww-star 1.8s ease-in-out infinite .4s;"/>
+                    <g transform="translate(84,20)" style="animation:ww-float 2.5s ease-in-out infinite;">
+                        <polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#F3C969" stroke="#D4A843" stroke-width="0.5"/>
+                    </g>
+                </g>
+                <circle cx="54" cy="54" r="51" fill="none" stroke="#7C5CBF" stroke-width="2"
+                        stroke-dasharray="250 70" stroke-dashoffset="20" opacity="0.7"/>
+            </svg>
+
+            <span style="position:absolute;top:4px;right:8px;color:#F3C969;font-size:11px;animation:ww-float 2s ease-in-out infinite;pointer-events:none;">✦</span>
+            <span style="position:absolute;top:26px;left:4px;color:#A78BFA;font-size:7px;animation:ww-float 2.7s ease-in-out infinite .4s;pointer-events:none;">✦</span>
         </div>
 
         {{-- Brand --}}
         <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full" style="background:#5BC8D4;"></div>
-            <span class="font-semibold text-base" style="color:#1B3A5C;">WayWay</span>
+            <div class="w-2 h-2 rounded-full" style="background:#A78BFA;"></div>
+            <span class="font-semibold text-base" style="color:#4F33B8; letter-spacing:1.5px;">Kelana</span>
         </div>
 
         {{-- Pipeline steps --}}
@@ -164,35 +185,41 @@
                                 ? 'w-8 h-8 rounded-full flex items-center justify-center text-xs ring-2 animate-pulse'
                                 : 'w-8 h-8 rounded-full flex items-center justify-center text-xs'"
                              :style="pipelineStep > i
-                                ? 'background:#2B7FA8;'
+                                ? 'background:#6B4CE6;'
                                 : pipelineStep === i
-                                    ? 'background:#EAF6FA; color:#2B7FA8; ring-color:#4BA8C8;'
+                                    ? 'background:#F3F0FE; color:#6B4CE6; outline:2px solid #A78BFA;'
                                     : 'background:#f1f5f9; color:#94a3b8;'">
                             <span x-text="pipelineStep > i ? '✓' : step.icon"></span>
                         </div>
                         <span class="text-xs whitespace-nowrap" style="color:#64748b;" x-text="step.label"></span>
                     </div>
                     <div x-show="i < pipeline.length - 1"
-                         :style="pipelineStep > i ? 'flex:1; height:2px; background:#4BA8C8; margin-bottom:16px;' : 'flex:1; height:2px; background:#e2e8f0; margin-bottom:16px;'">
+                         :style="pipelineStep > i
+                            ? 'flex:1;height:2px;background:#6B4CE6;margin-bottom:16px;'
+                            : 'flex:1;height:2px;background:#625598;margin-bottom:16px;'">
                     </div>
                 </div>
             </template>
         </div>
 
         {{-- Pesan loading --}}
-        <p class="text-sm font-medium animate-pulse" style="color:#2B7FA8;" x-text="loadingLabel"></p>
+        <p class="text-sm font-medium animate-pulse" style="color:#6B4CE6;" x-text="loadingLabel"></p>
 
         {{-- Ombak bawah --}}
         <div class="absolute bottom-0 left-0 right-0 h-12 overflow-hidden pointer-events-none">
-            <svg style="width:200%; animation:ww-wave 4s linear infinite;" viewBox="0 0 800 50" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 30 Q100 10 200 30 Q300 50 400 30 Q500 10 600 30 Q700 50 800 30 Q900 10 1000 30 Q1100 50 1200 30 Q1300 10 1400 30 Q1500 50 1600 30 L1600 50 L0 50 Z" fill="rgba(91,200,212,0.12)"/>
+            <svg style="width:200%; animation:ww-wave 5s linear infinite;" viewBox="0 0 800 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 30 Q100 10 200 30 Q300 50 400 30 Q500 10 600 30 Q700 50 800 30
+                         Q900 10 1000 30 Q1100 50 1200 30 Q1300 10 1400 30 Q1500 50 1600 30
+                         L1600 50 L0 50 Z" fill="rgba(107,76,230,0.10)"/>
+                <path d="M0 38 Q140 20 280 38 Q420 56 560 38 Q700 20 840 38 Q980 56 1120 38
+                         Q1260 20 1400 38 L1600 38 L1600 50 L0 50 Z" fill="rgba(243,201,105,0.07)"/>
             </svg>
         </div>
     </div>
 </div>
+
 {{-- ===================================================
      MODAL STEPPER
-     5 steps: Interests → Location → Companion → Date & Budget → Confirm
 =================================================== --}}
 <div x-show="showModal"
      class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
@@ -218,14 +245,21 @@
                 <template x-for="(step, i) in steps" :key="i">
                     <div class="flex items-center gap-1 flex-1">
                         <div :class="i < currentStep
-                                ? 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center bg-blue-500 text-white'
+                                ? 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center text-white'
                                 : i === currentStep
-                                    ? 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center bg-blue-100 text-blue-600 ring-2 ring-blue-400'
+                                    ? 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ring-2'
                                     : 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center bg-slate-100 text-slate-400'"
+                             :style="i < currentStep
+                                ? 'background:#625598;'
+                                : i === currentStep
+                                    ? 'background:#F3F0FE; color:#625598; outline:2px solid #857d9eff;'
+                                    : ''"
                              x-text="i < currentStep ? '&#10003;' : (i + 1)">
                         </div>
                         <div x-show="i < steps.length - 1"
-                            :class="i < currentStep ? 'flex-1 h-0.5 bg-blue-500' : 'flex-1 h-0.5 bg-slate-200'">
+                            :style="i < currentStep
+                                ? 'flex:1;height:2px;background:#625598;'
+                                : 'flex:1;height:2px;background:#625598;'">
                         </div>
                     </div>
                 </template>
@@ -242,8 +276,9 @@
                     @foreach($kategoris as $kat)
                     <button type="button" @click="toggleKategori({{ $kat->id }})"
                         :class="form.kategori_ids.includes({{ $kat->id }})
-                            ? 'kat-pill active px-4 py-2 rounded-xl text-sm font-semibold border-2 bg-blue-500 border-blue-500 text-white shadow-md'
-                            : 'kat-pill px-4 py-2 rounded-xl text-sm font-semibold border-2 bg-white border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50'">
+                            ? 'kat-pill active px-4 py-2 rounded-xl text-sm font-semibold border-2 text-white shadow-md'
+                            : 'kat-pill px-4 py-2 rounded-xl text-sm font-semibold border-2 bg-white border-slate-200 text-slate-600 hover:border-purple-300 hover:bg-purple-50'"
+                        :style="form.kategori_ids.includes({{ $kat->id }}) ? 'background:#6B4CE6; border-color:#6B4CE6;' : ''">
                         {{ $kat->nama_kategori }}
                     </button>
                     @endforeach
@@ -253,40 +288,29 @@
 
             {{-- STEP 2: Location --}}
             <div x-show="currentStep === 1" class="space-y-3">
-                <p class="text-sm text-slate-500">Search for your starting point in Batam:</p>
+                <p class="text-sm text-slate-500">Search for your starting point:</p>
                 <div class="relative">
                     <div class="relative flex items-center">
-
-    <svg class="absolute left-5 w-5 h-5 text-slate-400"
-        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-    </svg>
-
-    <input type="text"
-        x-model="locationQuery"
-        @input.debounce.500ms="searchLocation()"
-        @keydown.escape="locationResults = []"
-        placeholder="e.g. Nagoya Hill, Hotel XYZ..."
-        class="w-full h-14 pl-14 pr-16 rounded-xl border border-slate-200 
-        text-sm leading-none focus:outline-none focus:ring-2 focus:ring-blue-400">
-
-    <button type="button"
-        @click="useCurrentLocation()"
-        class="absolute right-4 w-10 h-10 flex items-center justify-center
-        bg-blue-50 hover:bg-blue-100 rounded-lg">
-
-        <svg class="w-5 h-5 text-blue-600"
-            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-        </svg>
-
-    </button>
-
-</div>                    <div x-show="locationResults.length > 0"
+                        <svg class="absolute left-5 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <input type="text"
+                            x-model="locationQuery"
+                            @input.debounce.500ms="searchLocation()"
+                            @keydown.escape="locationResults = []"
+                            placeholder="e.g. Nagoya Hill, Hotel XYZ..."
+                            class="w-full h-14 pl-14 pr-16 rounded-xl border border-slate-200 text-sm leading-none focus:outline-none focus:ring-2 transition"
+                            style="focus:ring-color:#6B4CE6;">
+                        <button type="button" @click="useCurrentLocation()"
+                            class="absolute right-4 w-10 h-10 flex items-center justify-center rounded-lg transition"
+                            style="background:#F3F0FE;">
+                            <svg class="w-5 h-5" style="color:#6B4CE6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div x-show="locationResults.length > 0"
                          class="search-dropdown absolute w-full bg-white border border-slate-200 rounded-xl mt-1 z-10">
                         <template x-for="(loc, i) in locationResults" :key="i">
                             <button type="button" @click="selectLocation(loc)"
@@ -305,12 +329,13 @@
                     </div>
                 </div>
 
-                <div x-show="form.origin_label" class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-xl px-4 py-3">
-                    <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <div x-show="form.origin_label" class="flex items-center gap-2 rounded-xl px-4 py-3"
+                     style="background:#F3F0FE; border:1px solid #A78BFA;">
+                    <svg class="w-4 h-4 flex-shrink-0" style="color:#6B4CE6;" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                     </svg>
-                    <p class="text-sm text-green-700 font-medium truncate" x-text="form.origin_label"></p>
-                    <button type="button" @click="clearLocation()" class="ml-auto text-green-500 hover:text-green-700">
+                    <p class="text-sm font-medium truncate" style="color:#4F33B8;" x-text="form.origin_label"></p>
+                    <button type="button" @click="clearLocation()" class="ml-auto" style="color:#6B4CE6;">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
@@ -334,7 +359,7 @@
                     <button type="button" @click="form.companion = '{{ $val }}'"
                         :class="form.companion === '{{ $val }}'
                             ? 'companion-card selected p-4 rounded-2xl border-2 text-left'
-                            : 'companion-card p-4 rounded-2xl border-2 border-slate-200 text-left hover:border-blue-300'">
+                            : 'companion-card p-4 rounded-2xl border-2 border-slate-200 text-left hover:border-purple-300'">
                         <p class="font-bold text-slate-800 text-sm">{{ $opt['label'] }}</p>
                         <p class="text-xs text-slate-400 mt-0.5">{{ $opt['desc'] }}</p>
                     </button>
@@ -347,23 +372,26 @@
                 <div>
                     <label class="block text-sm font-semibold text-slate-600 mb-2">Visit Date</label>
                     <input type="date" x-model="form.tanggal" :min="today"
-                        class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 transition"
+                        style="--tw-ring-color:#6B4CE6;">
                     <p x-show="errors.tanggal" class="text-red-500 text-xs mt-1" x-text="errors.tanggal"></p>
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-slate-600 mb-2">Budget per Person (entrance fees)</label>
                     <div class="relative mb-3">
                         <span class="absolute left-5 top-[14px] text-slate-400 text-sm">Rp</span>
-<input type="text"
-    x-model="formattedBudget"
-    @input="form.budget = parseInt($event.target.value.replace(/\./g, '')) || 0"
-    class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                        <input type="text"
+                            x-model="formattedBudget"
+                            @input="form.budget = parseInt($event.target.value.replace(/\./g, '')) || 0"
+                            class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 transition">
+                    </div>
                     <div class="flex gap-2 flex-wrap">
                         @foreach($budgetOptions as $val => $label)
                         <button type="button" @click="form.budget = {{ $val }}"
                             :class="form.budget == {{ $val }}
-                                ? 'px-3 py-1.5 text-xs rounded-lg border-2 bg-blue-500 text-white border-blue-500 font-semibold'
-                                : 'px-3 py-1.5 text-xs rounded-lg border-2 border-slate-200 text-slate-500 hover:border-blue-300'">
+                                ? 'px-3 py-1.5 text-xs rounded-lg border-2 text-white font-semibold'
+                                : 'px-3 py-1.5 text-xs rounded-lg border-2 border-slate-200 text-slate-500 hover:border-purple-300'"
+                            :style="form.budget == {{ $val }} ? 'background:#6B4CE6; border-color:#6B4CE6;' : ''">
                             {{ $label }}
                         </button>
                         @endforeach
@@ -373,7 +401,8 @@
                     <label class="block text-sm font-semibold text-slate-600 mb-2">
                         Max Destinations (<span x-text="form.max_destinations"></span> stops)
                     </label>
-                    <input type="range" x-model="form.max_destinations" min="2" max="10" class="w-full accent-blue-500">
+                    <input type="range" x-model="form.max_destinations" min="2" max="10"
+                           class="w-full" style="accent-color:#6B4CE6;">
                     <div class="flex justify-between text-xs text-slate-400 mt-1">
                         <span>2 stops</span>
                         <span>10 stops</span>
@@ -425,7 +454,8 @@
             <div x-show="currentStep === 0" class="text-xs text-slate-400">Select at least 1 category</div>
 
             <button x-show="currentStep < steps.length - 1" @click="nextStep()"
-                class="ml-auto flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition">
+                class="ml-auto flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition"
+                style="background:#9971bd;">
                 Next
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -434,7 +464,7 @@
 
             <button x-show="currentStep === steps.length - 1" @click="generateItinerary()"
                 class="ml-auto flex items-center gap-3 px-6 py-2.5 rounded-xl text-white text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                style="background: linear-gradient(to right, #2563eb, #0891b2);">
+                style="background:linear-gradient(to right, #aaa1d2ff, #94b7ceff);">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
@@ -451,9 +481,6 @@
 <script>
 function itineraryApp() {
     return {
-        // ==============================
-        // MODAL STATE
-        // ==============================
         showModal:   false,
         currentStep: 0,
 
@@ -465,9 +492,6 @@ function itineraryApp() {
             { title: 'Review & Generate',           subtitle: 'Double-check your preferences before we start.' },
         ],
 
-        // ==============================
-        // PIPELINE (loading indicator)
-        // ==============================
         pipeline: [
             { icon: '🔍', label: 'Filter'    },
             { icon: '📊', label: 'Bayesian'  },
@@ -478,9 +502,6 @@ function itineraryApp() {
         pipelineStep: 0,
         loadingLabel: 'Starting...',
 
-        // ==============================
-        // FORM DATA
-        // ==============================
         form: {
             kategori_ids:     [],
             budget:           100000,
@@ -493,53 +514,34 @@ function itineraryApp() {
             available_hours:  8,
         },
 
-        // ==============================
-        // LOCATION SEARCH
-        // ==============================
         locationQuery:   '',
         locationResults: [],
         isSearching:     false,
-
-        // ==============================
-        // STATE
-        // ==============================
-        errors:    {},
-        isLoading: false,
+        errors:          {},
+        isLoading:       false,
 
         get today() {
             return new Date().toISOString().split('T')[0];
         },
         get formattedBudget() {
-            return this.form.budget
-                ? Number(this.form.budget).toLocaleString('id-ID')
-                : '';
+            return this.form.budget ? Number(this.form.budget).toLocaleString('id-ID') : '';
         },
-
         set formattedBudget(val) {
             this.form.budget = parseInt(val.replace(/\./g, '')) || 0;
         },
-                get companionLabel() {
+        get companionLabel() {
             return { solo:'Solo', pasangan:'Couple', keluarga:'Family', grup:'Group' }[this.form.companion] || this.form.companion;
         },
 
-        // ==============================
-        // MODAL
-        // ==============================
         openModal()  { this.showModal = true; this.currentStep = 0; this.errors = {}; },
         closeModal() { if (!this.isLoading) this.showModal = false; },
 
-        // ==============================
-        // CATEGORY
-        // ==============================
         toggleKategori(id) {
             const idx = this.form.kategori_ids.indexOf(id);
             if (idx === -1) this.form.kategori_ids.push(id);
             else            this.form.kategori_ids.splice(idx, 1);
         },
 
-        // ==============================
-        // LOCATION SEARCH (Nominatim)
-        // ==============================
         async searchLocation() {
             const q = this.locationQuery.trim();
             if (q.length < 3) { this.locationResults = []; return; }
@@ -585,9 +587,6 @@ function itineraryApp() {
             );
         },
 
-        // ==============================
-        // STEP NAV
-        // ==============================
         validateStep() {
             this.errors = {};
             if (this.currentStep === 0 && !this.form.kategori_ids.length) {
@@ -604,16 +603,13 @@ function itineraryApp() {
         nextStep() { if (!this.validateStep()) return; if (this.currentStep < this.steps.length - 1) this.currentStep++; },
         prevStep()  { if (this.currentStep > 0) this.currentStep--; },
 
-        // ==============================
-        // GENERATE → redirect to show page
-        // ==============================
         async generateItinerary() {
             this.showModal = false;
             this.isLoading = true;
             this.errors    = {};
 
             const steps = [
-                [0, 'Filtering 163 destinations...'],
+                [0, 'Filtering destinations...'],
                 [1, 'Calculating scores...'],
                 [2, 'Building distance matrix...'],
                 [3, 'Optimizing route...'],
@@ -640,7 +636,6 @@ function itineraryApp() {
                 const json = await response.json();
 
                 if (json.success) {
-                    // Redirect ke halaman show dengan history_id
                     window.location.href = '/itinerary/show/' + json.data.history_id;
                 } else {
                     this.errors.general = json.message || 'Something went wrong.';
@@ -658,5 +653,4 @@ function itineraryApp() {
     };
 }
 </script>
-
 @endpush
