@@ -6,6 +6,7 @@
 
     {{-- Hero Section --}}
     @include('wisatawan.berandasection.banner')
+    @include('wisatawan.berandasection.short-videos')
     @include('wisatawan.berandasection.destinasi')
     @include('wisatawan.berandasection.iklan')
     @include('wisatawan.berandasection.travel')

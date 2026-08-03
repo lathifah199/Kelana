@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Travel Itinerary – WayWay</title>
+    <title>Travel Itinerary – Kelana</title>
     <style>
         @page {
             margin: 0;
@@ -408,9 +408,9 @@
             <div style="display: flex; align-items: center; gap: 6px;">
                 <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('assets/logo/logoo.png'))) }}"
                      style="height: 40px; width: auto; padding-top: 6pt;"
-                     alt="WayWay">
+                     alt="Kelana">
                 <span style="font-weight: bold; color: #415c7f; font-size: 14px; vertical-align: middle;">
-                    WayWay
+                    Kelana
                 </span>
             </div>
 
